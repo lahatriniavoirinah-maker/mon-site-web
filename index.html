@@ -1,0 +1,737 @@
+
+
+LAHATRINIAVO
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Web — Voyages d'Exception</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<!-- NAV -->
+<nav id="main-nav">
+  <a class="nav-logo" href="#" onclick="showPage('home')">Horizons<span> Voyages</span></a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" class="active" data-page="home">Accueil</a></li>
+    <li><a onclick="showPage('destinations')" data-page="destinations">Destinations</a></li>
+    <li><a onclick="showPage('services')" data-page="services">Services</a></li>
+    <li><a onclick="showPage('gallery')" data-page="gallery">Galerie</a></li>
+    <li><a onclick="showPage('contact')" data-page="contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMenu()">
+    ☰
+</button>
+  <button class="nav-cta" onclick="showPage('contact')">Planifier mon voyage</button>
+</nav>
+ 
+<!-- ═══════════ PAGE 1 — ACCUEIL ═══════════ -->
+<div id="page-home" class="page active">
+  <div style="position: relative;">
+    <div class="hero-bg"></div>
+    <div class="stars" id="stars"></div>
+ 
+    <!-- Decorative globe SVG -->
+    <svg class="globe-decor float-1" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="180" stroke="white" stroke-width="0.5"/>
+      <ellipse cx="200" cy="200" rx="90" ry="180" stroke="white" stroke-width="0.5"/>
+      <ellipse cx="200" cy="200" rx="150" ry="180" stroke="white" stroke-width="0.5"/>
+      <line x1="20" y1="200" x2="380" y2="200" stroke="white" stroke-width="0.5"/>
+      <line x1="200" y1="20" x2="200" y2="380" stroke="white" stroke-width="0.5"/>
+      <ellipse cx="200" cy="200" rx="180" ry="60" stroke="white" stroke-width="0.5"/>
+      <ellipse cx="200" cy="200" rx="180" ry="110" stroke="white" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="5" fill="rgba(201,168,76,0.8)"/>
+    </svg>
+ 
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Voyages d'exception depuis 2008</span>
+      </div>
+      <h1 class="hero-title">
+        Découvrez le monde<br>à votre <em>façon</em>
+      </h1>
+      <p class="hero-subtitle">
+        Des itinéraires sur-mesure, conçus pour les voyageurs qui recherchent l'authenticité, le luxe discret et les rencontres qui transforment.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('destinations')">Explorer les destinations</button>
+        <button class="btn-ghost" onclick="showPage('services')">
+          Nos services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+ 
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Défiler</span>
+    </div>
+ 
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-number"><span class="count-up" data-target="120">0</span>+</div>
+        <div class="stat-label">Destinations</div>
+      </div>
+      <div class="stat-item" style="animation-delay: 1.15s;">
+        <div class="stat-number"><span class="count-up" data-target="4800">0</span>+</div>
+        <div class="stat-label">Voyageurs satisfaits</div>
+      </div>
+      <div class="stat-item" style="animation-delay: 1.3s;">
+        <div class="stat-number"><span class="count-up" data-target="10">0</span></div>
+        <div class="stat-label">Ans d'expertise</div>
+      </div>
+      <div class="stat-item" style="animation-delay: 1.45s;">
+        <div class="stat-number" style="font-size: 1.8rem;">★ 4.9</div>
+        <div class="stat-label">Note moyenne</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Featured Destinations section -->
+  <div class="section" style="background: var(--navy);">
+    <div class="section-eyebrow reveal">
+      <div class="section-eyebrow-line"></div>
+      <span>À la une</span>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem;">
+      <div>
+        <h2 class="section-title reveal reveal-delay-1">Destinations phares</h2>
+        <p class="section-sub reveal reveal-delay-2">Nos sélections les plus prisées, choisies pour leur beauté, leur culture et leur authenticité.</p>
+      </div>
+      <button class="btn-ghost reveal reveal-delay-2" onclick="showPage('destinations')" style="white-space:nowrap;">
+        Voir tout
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </button>
+    </div>
+    <div class="dest-grid reveal reveal-delay-3">
+      <div class="dest-card">
+        <div class="dest-card-bg bg-santorini"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-content">
+          <div class="dest-region">Europe · Grèce</div>
+          <div class="dest-name">Santorin</div>
+          <div class="dest-desc">Dômes bleus face à la mer Égée, couchers de soleil à Oia, villages blanchis à la chaux et vins locaux d'exception.</div>
+          <div class="dest-arrow">Découvrir <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-card-bg bg-kyoto"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-content">
+          <div class="dest-region">Asie · Japon</div>
+          <div class="dest-name">Kyoto</div>
+          <div class="dest-desc">Temples anciens, jardins zen et cerisiers en fleur.</div>
+          <div class="dest-arrow">Découvrir <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-card-bg bg-maldives"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-content">
+          <div class="dest-region">Océan Indien</div>
+          <div class="dest-name">Maldives</div>
+          <div class="dest-desc">Lagons turquoise, bungalows sur pilotis, plongée parmi les raies mantas.</div>
+          <div class="dest-arrow">Découvrir <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-card-bg bg-marrakech"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-content">
+          <div class="dest-region">Afrique · Maroc</div>
+          <div class="dest-name">Marrakech</div>
+          <div class="dest-desc">Souks envoûtants, riads luxueux, désert de l'Atlas.</div>
+          <div class="dest-arrow">Découvrir <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-card-bg bg-patagonia"></div>
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-content">
+          <div class="dest-region">Amérique du Sud</div>
+          <div class="dest-name">Patagonie</div>
+          <div class="dest-desc">Glaciers majestueux, pampas infinies, bout du monde.</div>
+          <div class="dest-arrow">Découvrir <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Why us -->
+  <div class="section" style="background: linear-gradient(180deg, var(--navy) 0%, #0d2035 100%);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+      <div>
+        <div class="section-eyebrow reveal">
+          <div class="section-eyebrow-line"></div>
+          <span>Notre philosophie</span>
+        </div>
+        <h2 class="section-title reveal reveal-delay-1">Chaque voyage est<br><em style="color:var(--gold);">une œuvre unique</em></h2>
+        <p style="color:rgba(247,243,236,0.6); line-height:1.8; margin-bottom:2rem;" class="reveal reveal-delay-2">
+          Nous ne vendons pas des voyages, nous créons des expériences. Chaque itinéraire est pensé à partir de vos désirs, votre rythme, vos rêves. Nos experts voyagent eux-mêmes pour vous proposer l'authentique.
+        </p>
+        <button class="btn-primary reveal reveal-delay-3" onclick="showPage('services')">Nos prestations</button>
+      </div>
+      <div class="reveal reveal-delay-2" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div style="background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.12); padding:2rem; border-radius:2px;">
+          <div style="font-size:2rem; color:var(--gold); margin-bottom:0.8rem;">✦</div>
+          <div style="font-family:'Playfair Display',serif; font-size:1rem; color:var(--ivory); margin-bottom:0.5rem;">Sur-mesure total</div>
+          <div style="font-size:0.82rem; color:rgba(247,243,236,0.45); line-height:1.6;">Chaque détail adapté à vous, aucun compromis.</div>
+        </div>
+        <div style="background:rgba(30,122,140,0.08); border:1px solid rgba(30,122,140,0.2); padding:2rem; border-radius:2px; margin-top:1.5rem;">
+          <div style="font-size:2rem; color:var(--teal-light); margin-bottom:0.8rem;">◈</div>
+          <div style="font-family:'Playfair Display',serif; font-size:1rem; color:var(--ivory); margin-bottom:0.5rem;">Guides locaux</div>
+          <div style="font-size:0.82rem; color:rgba(247,243,236,0.45); line-height:1.6;">Des passionnés qui vous ouvrent les portes cachées.</div>
+        </div>
+        <div style="background:rgba(30,122,140,0.06); border:1px solid rgba(30,122,140,0.15); padding:2rem; border-radius:2px; margin-top:-1.5rem;">
+          <div style="font-size:2rem; color:var(--teal-light); margin-bottom:0.8rem;">◉</div>
+          <div style="font-family:'Playfair Display',serif; font-size:1rem; color:var(--ivory); margin-bottom:0.5rem;">Assistance 24h/24</div>
+          <div style="font-size:0.82rem; color:rgba(247,243,236,0.45); line-height:1.6;">Un conseiller disponible à tout moment.</div>
+        </div>
+        <div style="background:rgba(201,168,76,0.05); border:1px solid rgba(201,168,76,0.1); padding:2rem; border-radius:2px;">
+          <div style="font-size:2rem; color:var(--gold); margin-bottom:0.8rem;">❋</div>
+          <div style="font-family:'Playfair Display',serif; font-size:1rem; color:var(--ivory); margin-bottom:0.5rem;">Hébergements triés</div>
+          <div style="font-size:0.82rem; color:rgba(247,243,236,0.45); line-height:1.6;">Sélectionnés et visités par notre équipe.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- CTA Banner -->
+  <div style="background: var(--gold); padding: 5rem 4rem; text-align: center; position: relative; overflow: hidden;">
+    <div style="position:absolute; inset:0; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 30px);"></div>
+    <div style="position:relative; z-index:1;">
+      <p style="font-size:0.75rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(11,20,38,0.6); margin-bottom:1rem;">Prêt à partir ?</p>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:700; color:var(--navy); margin-bottom:1.5rem; line-height:1.1;">Votre prochain voyage<br>commence ici.</h2>
+      <button onclick="showPage('contact')" style="background:var(--navy); color:var(--gold); padding:1rem 2.5rem; border:none; font-size:0.85rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; border-radius:2px; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(11,20,38,0.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Demander un devis gratuit</button>
+    </div>
+  </div>
+ 
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Horizons Voyages</div>
+        <p class="footer-brand-desc">Des voyages d'exception pensés pour ceux qui veulent voir le monde autrement.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Explorer</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('destinations')">Destinations</a></li>
+          <li><a onclick="showPage('services')">Services</a></li>
+          <li><a onclick="showPage('gallery')">Galerie</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Destinations</div>
+        <ul class="footer-links">
+          <li><a>Europe</a></li>
+          <li><a>Asie</a></li>
+          <li><a>Amériques</a></li>
+          <li><a>Afrique</a></li>
+          <li><a>Océanie</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a>+261 38 56 053 43</a></li>
+          <li><a>lahatriniavoirinah.com</a></li>
+          <li><a>Ambalabe Andrainjato Fianarantsoa, Madagascar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2024 Horizons Voyages. Tous droits réservés.</span>
+      <div class="footer-legal">
+        <a>Mentions légales</a>
+        <a>Confidentialité</a>
+        <a>CGV</a>
+      </div>
+    </div>
+  </footer>
+</div>
+ 
+<!-- ═══════════ PAGE 2 — DESTINATIONS ═══════════ -->
+<div id="page-destinations" class="page">
+  <div class="dest-hero">
+    <div class="section-eyebrow" style="margin-bottom:1rem;">
+      <div class="section-eyebrow-line"></div>
+      <span>Explorer le monde</span>
+    </div>
+    <h1 class="dest-hero-title">Nos <em>destinations</em><br>d'exception</h1>
+  </div>
+ 
+  <div class="dest-filters">
+    <button class="filter-btn active" onclick="filterDest(this, 'all')">Toutes les destinations</button>
+    <button class="filter-btn" onclick="filterDest(this, 'europe')">Europe</button>
+    <button class="filter-btn" onclick="filterDest(this, 'asie')">Asie</button>
+    <button class="filter-btn" onclick="filterDest(this, 'afrique')">Afrique</button>
+    <button class="filter-btn" onclick="filterDest(this, 'amerique')">Amériques</button>
+    <button class="filter-btn" onclick="filterDest(this, 'oceanie')">Océanie</button>
+  </div>
+ 
+  <div class="dest-list-grid">
+    <!-- Cards -->
+    <div class="dest-list-card" data-cat="europe">
+      <div class="dest-list-img bg-santorini"><div class="dest-list-tag">Coup de cœur</div></div>
+      <div class="dest-list-info">
+        <div class="dest-list-region">Europe · Grèce</div>
+        <div class="dest-list-name">Santorin</div>
+        <p class="dest-list-desc">Villages perchés sur la caldeira, eaux cristallines et couchers de soleil légendaires depuis Oia.</p>
+        <div class="dest-list-meta">
+          <div class="dest-price">à partir de <strong>2 890 €</strong><span>/pers.</span></div>
+          <div class="dest-duration">8 jours · 7 nuits</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="dest-list-card" data-cat="asie">
+      <div class="dest-list-img bg-kyoto"></div>
+      <div class="dest-list-info">
+        <div class="dest-list-region">Asie · Japon</div>
+        <div class="dest-list-name">Kyoto & Tokyo</div>
+        <p class="dest-list-desc">L'alliance parfaite du Japon ancestral et de la modernité trépidante. Temples, rues animées et gastronomie.</p>
+        <div class="dest-list-meta">
+          <div class="dest-price">à partir de <strong>3 490 €</strong><span>/pers.</span></div>
+          <div class="dest-duration">12 jours · 11 nuits</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="dest-list-card" data-cat="oceanie">
+      <div class="dest-list-img bg-maldives"><div class="dest-list-tag">Exclusif</div></div>
+      <div class="dest-list-info">
+        <div class="dest-list-region">Océan Indien · Maldives</div>
+        <div class="dest-list-name">Maldives</div>
+        <p class="dest-list-desc">Le paradis absolu : bungalows sur pilotis, lagon turquoise, plongée avec requins-baleines et raies mantas.</p>
+        <div class="dest-list-meta">
+          <div class="dest-price">à partir de <strong>4 200 €</strong><span>/pers.</span></div>
+          <div class="dest-duration">10 jours · 9 nuits</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="dest-list-card" data-cat="afrique">
+      <div class="dest-list-img bg-marrakech"></div>
+      <div class="dest-list-info">
+        <div class="dest-list-region">Afrique · Maroc</div>
+        <div class="dest-list-name">Marrakech & Désert</div>
+        <p class="dest-list-desc">Médina envoûtante, riads secrets, nuit sous les étoiles dans les dunes de l'Erg Chebbi.</p>
+        <div class="dest-list-meta">
+          <div class="dest-price">à partir de <strong>1 890 €</strong><span>/pers.</span></div>
+          <div class="dest-duration">9 jours · 8 nuits</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="dest-list-card" data-cat="amerique">
+      <div class="dest-list-img bg-patagonia"><div class="dest-list-tag">Aventure</div></div>
+      <div class="dest-list-info">
+        <div class="dest-list-region">Amérique du Sud · Chili</div>
+        <div class="dest-list-name">Patagonie</div>
+        <p class="dest-list-desc">Torres del Paine, glaciers Perito Moreno, paysages du bout du monde. Pour les âmes sauvages.</p>
+        <div class="dest-list-meta">
+          <div class="dest-price">à partir de <strong>3 800 €</strong><span>/pers.</span></div>
+          <div class="dest-duration">14 jours · 13 nuits</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="dest-list-card" data-cat="asie">
+      <div class="dest-list-img" style="background-image: url('image7.jpg'); background-size: cover; background-position: center;"></div>
+      <div class="dest-list-info">
+        <div class="dest-list-region">Asie du Sud-Est · Thaïlande</div>
+        <div class="dest-list-name">Thaïlande du Nord</div>
+        <p class="dest-list-desc">Chiang Mai, temples dorés, éléphants en sanctuaire et marchés flottants colorés.</p>
+        <div class="dest-list-meta">
+          <div class="dest-price">à partir de <strong>2 190 €</strong><span>/pers.</span></div>
+          <div class="dest-duration">11 jours · 10 nuits</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <!-- A propos section -->
+    <section id="a-propos">
+        <h1 class="tittle">à propos</h1>
+        <div class="img-desc">
+            <div class="left">
+                 <video src="video.mp4" autoplay loop></video>
+            </div>
+
+        <div class="right">
+            <h3>Nous voyageons pour chercher d'autres états, d'autres vies, d'autres âmes.</h3>
+            <p>A France est l'un du pays moderniser en Europe,cette pays est en cas de dévelloper comme des autres pays. </p>
+            <a href="#">Lire Plus</a>
+        </div>
+        </div>
+        
+    </section>
+
+
+
+  <footer>
+    <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.04); padding-top:1.5rem;">
+      <span class="footer-copyright">© 2026 Lahatr's Voyages</span>
+      <div class="footer-legal">
+        <a onclick="showPage('home')">Accueil</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+
+
+
+
+
+
+ 
+<!-- ═══════════ PAGE 3 — SERVICES ═══════════ -->
+<div id="page-services" class="page">
+  <div class="services-hero">
+    <div class="section-eyebrow" style="margin-bottom:1rem;">
+      <div class="section-eyebrow-line"></div>
+      <span>Ce que nous faisons</span>
+    </div>
+    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2.5rem,5vw,4rem); font-weight:700; color:var(--ivory);">Nos <em style="color:var(--gold);font-style:italic;">services</em><br>sur-mesure</h1>
+  </div>
+ 
+  <div class="services-intro">
+    <div>
+      <p class="services-intro-text">
+        De la première idée jusqu'au retour chez vous, nous prenons en charge chaque aspect de votre voyage. Notre équipe de consultants passionnés travaille avec vous pour créer une expérience parfaitement alignée à vos envies, votre budget et vos rêves les plus fous.
+      </p>
+      <p class="services-intro-text" style="margin-top:1.2rem;">
+        Nous collaborons avec un réseau de partenaires locaux triés sur le volet dans plus de 60 pays, garantissant authenticité et qualité à chaque étape.
+      </p>
+    </div>
+    <blockquote class="services-intro-quote">
+      "Voyager, c'est naître et mourir à chaque instant."
+      <cite style="display:block; font-size:0.85rem; font-style:normal; color:var(--gold); margin-top:0.8rem; font-family:'Inter',sans-serif; letter-spacing:0.1em;">— Victor Hugo</cite>
+    </blockquote>
+  </div>
+ 
+  <div class="services-grid">
+    <div class="service-item">
+      <div class="service-num">01</div>
+      <div class="service-title">Itinéraires sur-mesure</div>
+      <p class="service-desc">Chaque voyage commence par une consultation approfondie. Nous concevons un itinéraire unique, adapté à vos goûts, votre rythme et vos contraintes.</p>
+      <div class="service-arrow">En savoir plus →</div>
+    </div>
+    <div class="service-item">
+      <div class="service-num">02</div>
+      <div class="service-title">Hébergements d'exception</div>
+      <p class="service-desc">Des boutique-hôtels aux demeures historiques, en passant par les lodges en pleine nature. Chaque établissement est visité et sélectionné par nos équipes.</p>
+      <div class="service-arrow">En savoir plus →</div>
+    </div>
+    <div class="service-item">
+      <div class="service-num">03</div>
+      <div class="service-title">Guides & Experts locaux</div>
+      <p class="service-desc">Nos guides sont des passionnés qui parlent votre langue et connaissent leurs régions comme leur poche. Accédez à des lieux et moments inaccessibles au commun.</p>
+      <div class="service-arrow">En savoir plus →</div>
+    </div>
+    <div class="service-item">
+      <div class="service-num">04</div>
+      <div class="service-title">Transferts & Logistique</div>
+      <p class="service-desc">Vols en classe affaires, véhicules privés, jets privés pour les destinations isolées. Votre confort et votre ponctualité sont notre priorité absolue.</p>
+      <div class="service-arrow">En savoir plus →</div>
+    </div>
+    <div class="service-item">
+      <div class="service-num">05</div>
+      <div class="service-title">Expériences exclusives</div>
+      <p class="service-desc">Dîner privé dans un monument historique, rencontre avec des artisans, visite en avant-première d'un musée. Nous créons des moments uniques que vous ne trouverez nulle part.</p>
+      <div class="service-arrow">En savoir plus →</div>
+    </div>
+    <div class="service-item">
+      <div class="service-num">06</div>
+      <div class="service-title">Assistance 24h/24</div>
+      <p class="service-desc">Un conseiller dédié vous accompagne avant, pendant et après votre voyage. Disponible à toute heure, en cas de besoin, pour tout type de situation.</p>
+      <div class="service-arrow">En savoir plus →</div>
+    </div>
+  </div>
+ 
+  <div class="process-section">
+    <div class="section-eyebrow">
+      <div class="section-eyebrow-line"></div>
+      <span>Comment ça marche</span>
+    </div>
+    <h2 class="section-title" style="margin-top:0.5rem;">4 étapes vers le<br><em style="color:var(--gold);">voyage parfait</em></h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-dot">1</div>
+        <div class="process-step-title">Consultation</div>
+        <p class="process-step-desc">Un rendez-vous pour découvrir vos envies, votre style de voyage et vos contraintes.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot">2</div>
+        <div class="process-step-title">Proposition</div>
+        <p class="process-step-desc">Nous vous présentons un itinéraire personnalisé avec tous les détails et options.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot">3</div>
+        <div class="process-step-title">Finalisation</div>
+        <p class="process-step-desc">Ajustements, confirmations et préparation complète de tous les éléments de votre voyage.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-dot">4</div>
+        <div class="process-step-title">Voyage & Retour</div>
+        <p class="process-step-desc">Vous partez serein, accompagné à distance. Au retour, un bilan pour nos prochains voyages.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <div style="background:var(--gold); padding:5rem 4rem; text-align:center;">
+    <h2 style="font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; color:var(--navy); margin-bottom:1rem;">Prêt à imaginer votre voyage ?</h2>
+    <p style="color:rgba(11,20,38,0.65); margin-bottom:2rem;">Consultation initiale gratuite et sans engagement.</p>
+    <button onclick="showPage('contact')" style="background:var(--navy); color:var(--gold); padding:1rem 2.5rem; border:none; font-size:0.85rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; border-radius:2px;">Prendre rendez-vous</button>
+  </div>
+ 
+  <footer>
+    <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.04); padding-top:1.5rem;">
+      <span class="footer-copyright">© 2026 Lahatr's Voyages</span>
+      <div class="footer-legal"><a onclick="showPage('home')">Accueil</a><a onclick="showPage('contact')">Contact</a></div>
+    </div>
+  </footer>
+</div>
+ 
+<!-- ═══════════ PAGE 4 — GALERIE ═══════════ -->
+<div id="page-gallery" class="page">
+  <div class="gallery-hero" style="background:var(--navy);">
+    <div class="section-eyebrow" style="margin-bottom:1rem;">
+      <div class="section-eyebrow-line"></div>
+      <span>Inspirations</span>
+    </div>
+    <h1 style="font-family:'Playfair Display',serif; font-size:clamp(2.5rem,5vw,4rem); font-weight:700; color:var(--ivory);">La <em style="color:var(--gold);font-style:italic;">galerie</em><br>des voyageurs</h1>
+  </div>
+ 
+  <div class="gallery-grid">
+    <div class="gallery-item gc-1 gp-2 tall" style="background-image:url('image8.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Santorin</span><small>Grèce</small></div>
+      </div>
+      <div class="gallery-photo-info">
+        <div style="font-size:0.65rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:0.3rem;">Grèce</div>
+        <div style="font-family:'Playfair Display',serif; color:white; font-size:1rem;">Santorin au coucher du soleil</div>
+      </div>
+    </div>
+    <div class="gallery-item gc-2 gp-1" style="background-image:url('image9.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Kyoto</span><small>Japon</small></div>
+      </div>
+    </div>
+    <div class="gallery-item gc-3 gp-2 wide" style="background-image:url('image10.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Patagonie</span><small>Chili · Argentine</small></div>
+      </div>
+    </div>
+    <div class="gallery-item gc-4 gp-1" style="background-image:url('image11.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Marrakech</span><small>Maroc</small></div>
+      </div>
+    </div>
+    <div class="gallery-item gc-5 gp-2 wide" style="background-image:url('image12.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Maldives</span><small>Océan Indien</small></div>
+      </div>
+    </div>
+    <div class="gallery-item gc-6 gp-1" style="background-image:url('image13.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Bali</span><small>Indonésie</small></div>
+      </div>
+    </div>
+    <div class="gallery-item gc-7 gp-2" style="background-image:url('image14.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Islande</span><small>Aurores boréales</small></div>
+      </div>
+    </div>
+    <div class="gallery-item gc-8 gp-1" style="background-image:url('image15.jpg');background-size:cover;background-position:center;">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-label"><span>Pérou</span><small>Machu Picchu</small></div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Témoignages -->
+  <div class="testimonials">
+    <div class="section-eyebrow">
+      <div class="section-eyebrow-line"></div>
+      <span>Ils nous font confiance</span>
+    </div>
+    <h2 class="section-title" style="margin-top:0.5rem;">Ce que disent nos<br><em style="color:var(--gold);">voyageurs</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Notre voyage au Japon était absolument parfait. Chaque hôtel, chaque activité, chaque guide… rien n'était laissé au hasard. Une magie à recommander."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div>
+            <div class="testimonial-name">Marie & Robert D.</div>
+            <div class="testimonial-trip">Japon, 12 jours · Printemps 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Pour notre lune de miel aux Maldives, l'équipe a tout prévu dans les moindres détails. Arrivée en hydravion, pétales de roses dans la chambre… inoubliable."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:var(--gold); color:var(--navy);">SL</div>
+          <div>
+            <div class="testimonial-name">Sophie & Lucas M.</div>
+            <div class="testimonial-trip">Maldives, 10 jours · Décembre 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"La Patagonie était mon rêve depuis 20 ans. Horizons l'a rendu réel et encore plus beau que je l'imaginais. Un voyage qui m'a changé."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:var(--teal);">AP</div>
+          <div>
+            <div class="testimonial-name">Antoine P.</div>
+            <div class="testimonial-trip">Patagonie, 14 jours · Été 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <footer>
+    <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.04); padding-top:1.5rem;">
+      <span class="footer-copyright">© 2026 Lahatr's Voyages</span>
+      <div class="footer-legal"><a onclick="showPage('home')">Accueil</a><a onclick="showPage('contact')">Contact</a></div>
+    </div>
+  </footer>
+</div>
+ 
+<!-- ═══════════ PAGE 5 — CONTACT ═══════════ -->
+<div id="page-contact" class="page">
+  <div class="contact-layout">
+    <div class="contact-left">
+      <div class="section-eyebrow" style="margin-bottom:1.5rem;">
+        <div class="section-eyebrow-line"></div>
+        <span>Parlons de votre voyage</span>
+      </div>
+      <h1 class="contact-left-title">Commençons<br>votre <em>aventure</em></h1>
+      <p class="contact-left-text">
+        Chaque voyage commence par une conversation. Nos consultants sont à votre disposition pour co-créer avec vous l'expérience de vos rêves.
+      </p>
+      <div class="contact-info-items">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.52 9.76 19.79 19.79 0 01.44 1.19 2 2 0 012.42 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Téléphone</div>
+            <div class="contact-info-value">+261 38 56 053 43</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">lahatriniavoirinah@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Adresse</div>
+            <div class="contact-info-value">Ambalabe Andrainjato Fianarantsoa, Madagascar</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="contact-info-label">Horaires</div>
+            <div class="contact-info-value">Lun–Ven, 9h–18h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="contact-right">
+      <h2 class="contact-form-title">Demander un devis</h2>
+      <p class="contact-form-sub">Gratuit, sans engagement. Réponse sous 24h.</p>
+      <div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nom</label>
+            <input class="form-input" type="text" placeholder="LAHATRINIAVO">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Prénom</label>
+            <input class="form-input" type="text" placeholder="Irinà">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="lahatriniavoirinah@gmail.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Destination souhaitée</label>
+          <select class="form-select">
+            <option value="">Choisir une destination...</option>
+            <option>Europe</option>
+            <option>Asie</option>
+            <option>Afrique</option>
+            <option>Amériques</option>
+            <option>Océan Indien / Pacifique</option>
+            <option>Je ne sais pas encore</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombre de personnes</label>
+            <input class="form-input" type="number" placeholder="2" min="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Période envisagée</label>
+            <input class="form-input" type="text" placeholder="Ex: Juillet 2025">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Budget approximatif</label>
+          <select class="form-select">
+            <option value="">Sélectionner...</option>
+            <option>Moins de 2 000 € / pers.</option>
+            <option>2 000 – 4 000 € / pers.</option>
+            <option>4 000 – 7 000 € / pers.</option>
+            <option>Plus de 7 000 € / pers.</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Votre projet en quelques mots</label>
+          <textarea class="form-textarea" placeholder="Parlez-nous de vos envies, de ce que vous souhaitez vivre ou découvrir..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm(this)">Envoyer ma demande</button>
+      </div>
+    </div>
+  </div>
+ 
+  <footer>
+    <div class="footer-bottom" style="border-top:1px solid rgba(255,255,255,0.04); padding-top:1.5rem;">
+      <span class="footer-copyright">© 2024 Lahatr's Voyages</span>
+      <div class="footer-legal"><a onclick="showPage('home')">Accueil</a><a>Mentions légales</a></div>
+    </div>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
